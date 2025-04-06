@@ -31,7 +31,6 @@
     }
     button {
   touch-action: manipulation;
-  -webkit-user-select: none;
       font-size: 2rem;
       padding: 8px;
       width: 60px;
@@ -43,7 +42,7 @@
       white-space: nowrap;
     }
     .btn-clear {
-      background-color: #ffcccc !important;
+      background-color: #dcdcdc !important;
     }
     .output {
       margin: 4px 10px;
@@ -52,8 +51,8 @@
     #saveBtn {
       width: 100px;
       height: 50px;
-      background: #f0f0f0;
-      font-size: 1rem;
+      background: #dcdcdc;
+      font-size: 0.9rem;
       border-radius: 12px;
     }
     #sendAllBtn {
@@ -203,9 +202,10 @@
       ul.innerHTML = '';
       dataQueue.forEach((item, i) => {
         const li = document.createElement("li");
-        li.textContent = `${i + 1}: ${item.stock1} / ${item.stock2} / ${item.type} / ${item.number}`;
+        li.textContent = `${i + 1}: ${item.stock1}${item.stock2} / ${item.type}${item.number}`;
         const del = document.createElement("button");
         del.textContent = "❌";
+        del.style.fontSize = "0.8rem";
         del.style.marginLeft = "8px";
         del.onclick = () => {
           dataQueue.splice(i, 1);
