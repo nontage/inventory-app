@@ -5,6 +5,21 @@
   <title>在庫一括入力</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <style>
+    html, body, div[role="button"] {
+  font-size: 2rem;
+  padding: 8px;
+  width: 60px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  background: #eee;
+  color: black;
+  white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
     html, body {
       touch-action: manipulation;
       -ms-touch-action: manipulation;
@@ -29,34 +44,36 @@
       gap: 4px;
       margin-bottom: 4px;
     }
-    button {
+    div[role="button"] {
+  font-size: 2rem;
+  padding: 8px;
+  width: 60px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  background: #eee;
+  color: black;
+  white-space: nowrap;
   touch-action: manipulation;
   -webkit-user-select: none;
-      font-size: 2rem;
-      padding: 8px;
-      width: 60px;
-      height: 50px;
-      border-radius: 8px;
-      border: none;
-      background: #eee;
-      color: black;
-      white-space: nowrap;
-    }
-    .btn-clear {
+  -ms-user-select: none;
+  user-select: none;
+}
+    div.btn-clear {
       background-color: #ffcccc !important;
     }
     .output {
       margin: 4px 10px;
       font-size: 0.9rem;
     }
-    #saveBtn {
+    div#saveBtn {
       width: 100px;
       height: 50px;
       background: #f0f0f0;
       font-size: 1rem;
       border-radius: 12px;
     }
-    #sendAllBtn {
+    div#sendAllBtn {
       width: 140px;
       height: 50px;
       background: green;
@@ -205,7 +222,15 @@
       dataQueue.forEach((item, i) => {
         const li = document.createElement("li");
         li.textContent = `${i + 1}: ${item.stock1} / ${item.stock2} / ${item.type} / ${item.number}`;
-        const del = document.createElement("button");
+        const del = document.createElement("div");
+        del.className = "btn-delete";
+        del.style.display = "inline-block";
+        del.style.marginLeft = "8px";
+        del.style.color = "red";
+        del.style.cursor = "pointer";
+        del.style.fontSize = "1.2rem";
+        del.setAttribute("role", "button");
+        del.setAttribute("tabindex", "0");
         del.textContent = "❌";
         del.style.marginLeft = "8px";
         del.onclick = () => {
