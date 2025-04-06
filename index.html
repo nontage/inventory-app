@@ -29,7 +29,7 @@
       gap: 4px;
       margin-bottom: 4px;
     }
-    .btn {
+    button {
   touch-action: manipulation;
       font-size: 2rem;
       padding: 8px;
@@ -80,43 +80,31 @@
       border-radius: 10px;
       box-shadow: 0 0 4px rgba(0,0,0,0.1);
     }
-  
-.button2 {
-  width: 24px;
-  height: 24px;
-  font-size: 1rem;
-  padding: 0;
-  
-  background-color: #f5f5f5;
-  border: none;
-  border-radius: 4px;
-  color: red;
-}
-</style>
+  </style>
 </head>
 <body>
 
   <div class="section">
     
     <div class="btn-grid-row">
-      <button class="btn" onclick="setStock1('T')">T</button>
-      <button class="btn" onclick="setStock1('B')">B</button>
-      <button class="btn" onclick="setStock1('A')">A</button>
+      <button onclick="setStock1('T')">T</button>
+      <button onclick="setStock1('B')">B</button>
+      <button onclick="setStock1('A')">A</button>
     </div>
     <div class="btn-grid-row">
-      <button class="btn" onclick="addStock2('1')">1</button>
-      <button class="btn" onclick="addStock2('2')">2</button>
-      <button class="btn" onclick="addStock2('3')">3</button>
-      <button class="btn" onclick="addStock2('4')">4</button>
-      <button class="btn" onclick="addStock2('5')">5</button>
+      <button onclick="addStock2('1')">1</button>
+      <button onclick="addStock2('2')">2</button>
+      <button onclick="addStock2('3')">3</button>
+      <button onclick="addStock2('4')">4</button>
+      <button onclick="addStock2('5')">5</button>
     </div>
     <div class="btn-grid-row">
-      <button class="btn" onclick="addStock2('6')">6</button>
-      <button class="btn" onclick="addStock2('7')">7</button>
-      <button class="btn" onclick="addStock2('8')">8</button>
-      <button class="btn" onclick="addStock2('9')">9</button>
-      <button class="btn" onclick="addStock2('0')">0</button>
-      <button class="btn-clear" onclick="clearStock2()"><span style="font-size: 1.5rem; padding: 0;">C</span></button>
+      <button onclick="addStock2('6')">6</button>
+      <button onclick="addStock2('7')">7</button>
+      <button onclick="addStock2('8')">8</button>
+      <button onclick="addStock2('9')">9</button>
+      <button onclick="addStock2('0')">0</button>
+      <button class="btn-clear" onclick="clearStock2()">C</button>
     </div>
     <div class="output">
       <strong>在庫場所：</strong><span id="stock_display">T / 0</span>
@@ -126,25 +114,25 @@
   <div class="section">
     
     <div class="btn-grid-row">
-      <button class="btn" onclick="setType('TO')">TO</button>
-      <button class="btn" onclick="setType('BT')">BT</button>
-      <button class="btn" onclick="setType('AC')">A<span style="font-size: 1.5rem; padding: 0;">C</span></button>
-      <button class="btn" onclick="setType('MX')">MX</button>
+      <button onclick="setType('TO')">TO</button>
+      <button onclick="setType('BT')">BT</button>
+      <button onclick="setType('AC')">AC</button>
+      <button onclick="setType('MX')">MX</button>
     </div>
     <div class="btn-grid-row">
-      <button class="btn" onclick="addNumber('1')">1</button>
-      <button class="btn" onclick="addNumber('2')">2</button>
-      <button class="btn" onclick="addNumber('3')">3</button>
-      <button class="btn" onclick="addNumber('4')">4</button>
-      <button class="btn" onclick="addNumber('5')">5</button>
+      <button onclick="addNumber('1')">1</button>
+      <button onclick="addNumber('2')">2</button>
+      <button onclick="addNumber('3')">3</button>
+      <button onclick="addNumber('4')">4</button>
+      <button onclick="addNumber('5')">5</button>
     </div>
     <div class="btn-grid-row">
-      <button class="btn" onclick="addNumber('6')">6</button>
-      <button class="btn" onclick="addNumber('7')">7</button>
-      <button class="btn" onclick="addNumber('8')">8</button>
-      <button class="btn" onclick="addNumber('9')">9</button>
-      <button class="btn" onclick="addNumber('0')">0</button>
-      <button class="btn-clear" onclick="clearNumber()"><span style="font-size: 1.5rem; padding: 0;">C</span></button>
+      <button onclick="addNumber('6')">6</button>
+      <button onclick="addNumber('7')">7</button>
+      <button onclick="addNumber('8')">8</button>
+      <button onclick="addNumber('9')">9</button>
+      <button onclick="addNumber('0')">0</button>
+      <button class="btn-clear" onclick="clearNumber()">C</button>
     </div>
     <div class="output">
       <strong>品番：</strong><span id="type_display">TO / 0</span>
@@ -154,7 +142,7 @@
   <button id="saveBtn" onclick="addToQueue()">➕ 一時保存</button>
   <ul id="queueList"></ul>
 
-  <button class="btn" id="sendAllBtn" onclick="sendQueue()">✅ まとめて送信</button>
+  <button id="sendAllBtn" onclick="sendQueue()">✅ まとめて送信</button>
 
   <script>
     let stock1 = 'T', stock2 = '', type = 'TO', number = '';
@@ -214,10 +202,6 @@
       ul.innerHTML = '';
       dataQueue.slice().reverse().forEach((item, i) => {
         const li = document.createElement("li");
-        li.style.display = "inline-flex";
-        li.style.alignItems = "center";
-        li.style.gap = "4px";
-        li.style.margin = "4px 0";
         li.textContent = `${dataQueue.length - i}: ${item.stock1}${item.stock2} / ${item.type}${item.number}`;
         const del = document.createElement("button");
         del.textContent = "❌";
