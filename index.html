@@ -88,24 +88,24 @@
   <div class="section">
     
     <div class="btn-grid-row">
-      <button onclick="setStock1('T')">T</button>
-      <button onclick="setStock1('B')">B</button>
-      <button onclick="setStock1('A')">A</button>
+      <div role="button" tabindex="0" onclick="setStock1('T')">T</div>
+      <div role="button" tabindex="0" onclick="setStock1('B')">B</div>
+      <div role="button" tabindex="0" onclick="setStock1('A')">A</div>
     </div>
     <div class="btn-grid-row">
-      <button onclick="addStock2('1')">1</button>
-      <button onclick="addStock2('2')">2</button>
-      <button onclick="addStock2('3')">3</button>
-      <button onclick="addStock2('4')">4</button>
-      <button onclick="addStock2('5')">5</button>
+      <div role="button" tabindex="0" onclick="addStock2('1')">1</div>
+      <div role="button" tabindex="0" onclick="addStock2('2')">2</div>
+      <div role="button" tabindex="0" onclick="addStock2('3')">3</div>
+      <div role="button" tabindex="0" onclick="addStock2('4')">4</div>
+      <div role="button" tabindex="0" onclick="addStock2('5')">5</div>
     </div>
     <div class="btn-grid-row">
-      <button onclick="addStock2('6')">6</button>
-      <button onclick="addStock2('7')">7</button>
-      <button onclick="addStock2('8')">8</button>
-      <button onclick="addStock2('9')">9</button>
-      <button onclick="addStock2('0')">0</button>
-      <button class="btn-clear" onclick="clearStock2()">C</button>
+      <div role="button" tabindex="0" onclick="addStock2('6')">6</div>
+      <div role="button" tabindex="0" onclick="addStock2('7')">7</div>
+      <div role="button" tabindex="0" onclick="addStock2('8')">8</div>
+      <div role="button" tabindex="0" onclick="addStock2('9')">9</div>
+      <div role="button" tabindex="0" onclick="addStock2('0')">0</div>
+      <div role="button" tabindex="0" class="btn-clear" onclick="clearStock2()">C</div>
     </div>
     <div class="output">
       <strong>在庫場所：</strong><span id="stock_display">T / 0</span>
@@ -115,37 +115,36 @@
   <div class="section">
     
     <div class="btn-grid-row">
-      <button onclick="setType('TO')">TO</button>
-      <button onclick="setType('BT')">BT</button>
-      <button onclick="setType('AC')">AC</button>
-      <button onclick="setType('MX')">MX</button>
+      <div role="button" tabindex="0" onclick="setType('TO')">TO</div>
+      <div role="button" tabindex="0" onclick="setType('BT')">BT</div>
+      <div role="button" tabindex="0" onclick="setType('AC')">AC</div>
+      <div role="button" tabindex="0" onclick="setType('MX')">MX</div>
     </div>
     <div class="btn-grid-row">
-      <button onclick="addNumber('1')">1</button>
-      <button onclick="addNumber('2')">2</button>
-      <button onclick="addNumber('3')">3</button>
-      <button onclick="addNumber('4')">4</button>
-      <button onclick="addNumber('5')">5</button>
+      <div role="button" tabindex="0" onclick="addNumber('1')">1</div>
+      <div role="button" tabindex="0" onclick="addNumber('2')">2</div>
+      <div role="button" tabindex="0" onclick="addNumber('3')">3</div>
+      <div role="button" tabindex="0" onclick="addNumber('4')">4</div>
+      <div role="button" tabindex="0" onclick="addNumber('5')">5</div>
     </div>
     <div class="btn-grid-row">
-      <button onclick="addNumber('6')">6</button>
-      <button onclick="addNumber('7')">7</button>
-      <button onclick="addNumber('8')">8</button>
-      <button onclick="addNumber('9')">9</button>
-      <button onclick="addNumber('0')">0</button>
-      <button class="btn-clear" onclick="clearNumber()">C</button>
+      <div role="button" tabindex="0" onclick="addNumber('6')">6</div>
+      <div role="button" tabindex="0" onclick="addNumber('7')">7</div>
+      <div role="button" tabindex="0" onclick="addNumber('8')">8</div>
+      <div role="button" tabindex="0" onclick="addNumber('9')">9</div>
+      <div role="button" tabindex="0" onclick="addNumber('0')">0</div>
+      <div role="button" tabindex="0" class="btn-clear" onclick="clearNumber()">C</div>
     </div>
     <div class="output">
       <strong>品番：</strong><span id="type_display">TO / 0</span>
     </div>
   </div>
 
-  <button id="saveBtn" onclick="addToQueue()">➕ 一時保存</button>
+  <div role="button" tabindex="0" id="saveBtn" onclick="addToQueue()">➕ 一時保存</div>
 
-  <h3>保存中のデータ</h3>
   <ul id="queueList"></ul>
 
-  <button id="sendAllBtn" onclick="sendQueue()">✅ まとめて送信</button>
+  <div role="button" tabindex="0" id="sendAllBtn" onclick="sendQueue()">✅ まとめて送信</div>
 
   <script>
     let stock1 = 'T', stock2 = '', type = 'TO', number = '';
